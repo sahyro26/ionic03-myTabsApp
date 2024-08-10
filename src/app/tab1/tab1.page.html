@@ -1,17 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
+    <!-- <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
+    </ion-toolbar> -->
   </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let restaurant of restaurants" [routerLink]="['/tabs/tab1',restaurant.id]">
+      <ion-card>
+        <ion-img [alt]="restaurant.name" [src]="restaurant.image" />
+        <ion-card-header>
+          <ion-card-title>{{restaurant.name}}</ion-card-title>
+        </ion-card-header>
+     
+        <ion-card-content>
+          {{restaurant.address}}
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>
